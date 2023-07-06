@@ -1,0 +1,19 @@
+﻿@model TestTask.Models.FolderDTO
+
+<h3>"Folder" - @Model.Name</h3>
+<br/>
+@if (Model.Children.Any())
+{
+    <ul>
+        @foreach (var child in Model.Children)
+        {
+            <li>
+                <a href="@child.Path">@child.Name</a>
+            </li>
+        }
+    </ul>
+}
+else
+{
+    <p>No children - this is a terminal folder</p>
+}
